@@ -16,8 +16,6 @@ class Enemy{
             this.y = y;
             this.speed = speed;
             this.sprite = 'images/enemy-bug.png';
-            this.width = 70;
-            this.height = 50;
     }
         
 
