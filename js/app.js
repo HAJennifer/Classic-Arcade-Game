@@ -83,11 +83,7 @@ handleInput(key) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-var allEnemies = [
-    new Enemy(0, 40),
-    new Enemy(0, 130),
-    new Enemy(0, 220)
-];
+const allEnemies = [];
 
 var player = new Player(200, 400);
 
