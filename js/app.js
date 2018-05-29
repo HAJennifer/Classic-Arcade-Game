@@ -55,25 +55,22 @@ render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
 
-handleInput(key) {
+handleInput(keyPress) {
 
-    if (key === 'left') {
-        this.x = this.x - 101;
+    switch (keyPress) {
+        case 'left':
+            this.x -= this.speed + 50;
+            break;
+        case 'up':
+            this.y -= this.speed + 30;
+            break;
+        case 'right':
+            this.x += this.speed + 50;
+            break;
+        case 'down':
+            this.y += this.speed + 30;
+            break;
     }
-    if (key === 'up') {
-        this.y = this.y - 101;
-    }
-
-    if (key === 'right') {
-        this.x = this.x + 101;
-    }
-
-    if (key === 'down') {
-        this.y = this.y + 101;
-    }
-
-
-}
 
 };
 
