@@ -81,10 +81,17 @@ handleInput(keyPress) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-var allEnemies = [ new Enemy(-8, 60, 3), new Enemy(0, 140, 10), new Enemy(-5, 300, 15)];
+var allEnemies = [];
 
-var player = new Player(200, 400);
+// Position "y" where the enemies will are created
+var enemyPosition = [60, 140, 220];
+var player = new Player(200, 380, 50);
+var enemy;
 
+enemyPosition.forEach(function(posY) {
+    enemy = new Enemy(0, posY, 100 + Math.floor(Math.random() * 512));
+    allEnemies.push(enemy);
+});
 
 
 // This listens for key presses and sends the keys to your
