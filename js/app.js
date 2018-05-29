@@ -22,11 +22,20 @@ class Enemy{
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
   update(dt) {
-    this.x+=this.speed*dt;
-     if (this.x >= 505) {
-        this.x = 0;
+    this. x+= this.speed*dt;
+    if (this.x > 550) {
+        this.x = -100;
+        this.speed = 100 + Math.floor(Math.random() * 512);
+    }
          
-     this.checkCollision();
+     // Check for collision
+    if (player.x < this.x + 60 &&
+        player.x + 37 > this.x &&
+        player.y < this.y + 25 &&
+        30 + player.y > this.y) {
+        player.x = 200;
+        player.y = 380;
+    }
     }
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
@@ -43,14 +52,32 @@ class Enemy{
 // This class requires an update(), render() and
 // a handleInput() method.
 class Player{
-    constructor(x, y) {
+    constructor(x, y, speed) {
     this.x = x;
     this.y = y;
     this.speed = speed;
     this.sprite = 'images/char-boy.png';
 }
 
-update(dt) {}
+update(dt) {
+ if (this.y > 380) {
+        this.y = 380;
+    }
+
+    if (this.x > 400) {
+        this.x = 400;
+    }
+
+    if (this.x < 0) {
+        this.x = 0;
+    }
+
+    // Check for player reaching top of canvas and winning the game
+    if (this.y < 0) {
+        this.x = 200;
+        this.y = 380;
+    }
+}
 
 render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -73,7 +100,7 @@ handleInput(keyPress) {
             break;
     }
 
-};
+}
 
 
 
