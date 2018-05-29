@@ -27,6 +27,8 @@ class Enemy{
     this.x+=this.speed*dt;
      if (this.x >= 505) {
         this.x = 0;
+         
+     this.checkCollision();
     }
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
