@@ -107,10 +107,10 @@ handleInput(keyPress) {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-var enemy1 = new Enemy();
-var enemy2 = new Enemy();
-var enemy3 = new Enemy();
-var allEnemies = [enemy1, enemy2, enemy3];
+var enemy = new Enemy();
+var enemy = new Enemy();
+var enemy = new Enemy();
+var allEnemies = [enemy, enemy, enemy];
 
 
 // This listens for key presses and sends the keys to your
