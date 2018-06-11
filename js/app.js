@@ -33,7 +33,7 @@ class Enemy{
         player.x = 200;
         player.y = 380;
     }
-    }
+    };
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
@@ -41,8 +41,8 @@ class Enemy{
 // Draw the enemy on the screen, required method for game
   render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-  }
-}
+  };
+};
 
 
 // Now write your own player class
@@ -74,11 +74,11 @@ update(dt) {
         this.x = 200;
         this.y = 380;
     }
-}
+};
 
 render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 handleInput(keyPress) {
 
@@ -97,7 +97,8 @@ handleInput(keyPress) {
             break;
     }
 
-}
+};
+};
 
 
 
