@@ -50,8 +50,8 @@ class Enemy{
 // a handleInput() method.
 class Player{
     constructor(x, y, speed) {
-    this.x = x;
-    this.y = y;
+    this.x = 200;
+    this.y = 380;
     this.speed = speed;
     this.sprite = 'images/char-boy.png';
 }
