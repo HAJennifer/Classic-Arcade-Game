@@ -101,15 +101,15 @@ handleInput(keyPress) {
 };
 
 
+var player = new Player();
 
- var allEnemies = [
-     new Enemy( 0, 310),
-     new Enemy( 0, 130 ),
-     new Enemy( 0, 220 )
+var enemy1 = new Enemy(0, 60, 100);
+var enemy2 = new Enemy(202, 143, 150);
+var enemy3 = new Enemy(101, 226, 90);
+var enemy4 = new Enemy(202, 60, 120);
+var enemy5 = new Enemy(404, 226, 90);
 
-];
-
-var player = new Player(200, 380);
+var allEnemies = [enemy1, enemy2, enemy3, enemy4, enemy5];
 
 
 
