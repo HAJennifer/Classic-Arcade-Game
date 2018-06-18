@@ -22,7 +22,7 @@ class Enemy{
     this. x+= this.speed*dt;
     if (this.x > 505) {
         this.x = -100;
-        this.speed = 100 + Math.floor(Math.random() * 512);
+        this.speed = 100 + Math.floor(Math.random() * 223);
     }
          
      // Check for collision
