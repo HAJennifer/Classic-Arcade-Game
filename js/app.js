@@ -1,7 +1,6 @@
 'use strict;'
 // Enemies our player must avoid
-var score = 0;
-document.getElementById('playerScore').innerHTML = score;
+
 class Enemy{
 
     // Variables applied to each of our instances go here,
@@ -71,8 +70,7 @@ update(dt) {
     if (this.y < 0) {
         this.x = 200;
         this.y = 380;
-	score++;
-	document.getElementById('playerScore').innerHTML = score;
+	
 }
 };
 
