@@ -1,6 +1,7 @@
 'use strict;'
 // Enemies our player must avoid
-
+var score = 0;
+document.getElementById('playerScore').innerHTML = score;
 class Enemy{
 
     // Variables applied to each of our instances go here,
@@ -26,12 +27,10 @@ class Enemy{
     }
          
      // Check for collision
-    if (player.x < this.x + 60 &&
-        player.x + 37 > this.x &&
-        player.y < this.y + 25 &&
-        30 + player.y > this.y) {
-        player.x = 200;
-        player.y = 380;
+   if(this.x < player.x + 30 && this.x + 60 > player.x && this.y < player.y + 60 && this.y + 40 > player.y) {
+		score = 0;
+		document.getElementById('playerScore').innerHTML = score;
+		player.reset();
     }
     };
     // You should multiply any movement by the dt parameter
@@ -57,23 +56,11 @@ class Player{
 }
 
 update(dt) {
- if (this.y > 380) {
-        this.y = 380;
-    }
-
-    if (this.x > 400) {
-        this.x = 400;
-    }
-
-    if (this.x < 0) {
-        this.x = 0;
-    }
-
-    // Check for player reaching top of canvas and winning the game
-    if (this.y < 0) {
-        this.x = 200;
-        this.y = 380;
-    }
+if (player.y < 20) {
+	score++;
+	document.getElementById('playerScore').innerHTML = score;
+	this.reset();
+}
 };
 
 render() {
@@ -99,7 +86,10 @@ handleInput(keyPress) {
 
 };
 };
-
+reset() {
+    this.x = 200;
+    this.y = 320;
+};
 
 
 // Now instantiate your objects.
