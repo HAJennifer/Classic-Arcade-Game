@@ -101,7 +101,7 @@ handleInput(keyPress) {
 };
 
 
-var player = new Player();
+var player = new Player(200,380);
 
 var enemy1 = new Enemy(0, 60, 100);
 var enemy2 = new Enemy(202, 143, 150);
