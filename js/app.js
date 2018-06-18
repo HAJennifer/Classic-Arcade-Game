@@ -79,22 +79,19 @@ update(dt) {
 render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
-
 handleInput(keyPress) {
-    switch (keyPress) {
-        case 'left':
-            this.x -= this.speed + 50;
-            break;
-        case 'up':
-            this.y -= this.speed + 30;
-            break;
-        case 'right':
-            this.x += this.speed + 50;
-            break;
-        case 'down':
-            this.y += this.speed + 30;
-            break;
-    }
+		if (keyPress == 'left') {
+			this.x -= 101;
+		}
+		if (keyPress == 'up') {
+			this.y -= 83;
+		}
+		if (keyPress == 'right') {
+			this.x += 101;
+		}
+		if (keyPress == 'down') {
+			this.y += 83;
+		}
 
 };
 };
