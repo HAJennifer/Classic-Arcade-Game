@@ -21,7 +21,7 @@ class Enemy{
 // Parameter: dt, a time delta between ticks
   update(dt) {
     this. x+= this.speed*dt;
-    if (this.x > 550) {
+    if (this.x > 505) {
         this.x = -100;
         this.speed = 100 + Math.floor(Math.random() * 512);
     }
@@ -33,9 +33,6 @@ class Enemy{
         30 + player.y > this.y) {
         player.x = 200;
         player.y = 380;
-		score = 0;
-		document.getElementById('playerScore').innerHTML = score;
-		player.reset();
     }
     };
     // You should multiply any movement by the dt parameter
@@ -76,7 +73,6 @@ update(dt) {
         this.y = 380;
 	score++;
 	document.getElementById('playerScore').innerHTML = score;
-	this.reset();
 }
 };
 
@@ -103,16 +99,13 @@ handleInput(keyPress) {
 
 };
 };
-reset() {
-    this.x = 200;
-    this.y = 380;
-};
+
 
 
 var allEnemies = [];
 
 // Position "y" where the enemies will are created
-var enemyPosition = [60, 140, 220];
+var enemyPosition = [50, 150, 210];
 var player = new Player(200, 380, 50);
 var enemy;
 
