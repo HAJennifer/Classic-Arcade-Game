@@ -100,16 +100,14 @@ handleInput(keyPress) {
 
 
 
-let allEnemies = [];
-let player = new Player();
+ var allEnemies = [
+     new Enemy( 0, 310),
+     new Enemy( 0, 130 ),
+     new Enemy( 0, 220 )
 
-// "Y" position where the enemies will are created
-let enemyY = [60, 140, 220];
-let enemy;
-enemyY.forEach(function (Y) {
-    enemy = new Enemy(0, Y, Math.random() * 500 + 80);
-    allEnemies.push(enemy);
-});
+];
+
+var Player = new Player(200, 380);
 
 
 
