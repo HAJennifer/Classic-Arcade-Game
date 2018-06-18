@@ -27,7 +27,12 @@ class Enemy{
     }
          
      // Check for collision
-   if(this.x < player.x + 30 && this.x + 60 > player.x && this.y < player.y + 60 && this.y + 40 > player.y) {
+   if (player.x < this.x + 60 &&
+        player.x + 37 > this.x &&
+        player.y < this.y + 25 &&
+        30 + player.y > this.y) {
+        player.x = 200;
+        player.y = 380;
 		score = 0;
 		document.getElementById('playerScore').innerHTML = score;
 		player.reset();
@@ -49,14 +54,26 @@ class Enemy{
 // a handleInput() method.
 class Player{
     constructor(x, y, speed) {
-    this.x = 200;
-    this.y = 380;
+    this.x = x;
+    this.y = y;
     this.speed = speed;
     this.sprite = 'images/char-boy.png';
-}
 
 update(dt) {
-if (player.y < 20) {
+ if (this.y > 380) {
+        this.y = 380;
+    }
+    if (this.x > 400) {
+        this.x = 400;
+    }
+    if (this.x < 0) {
+        this.x = 0;
+    }
+
+    // Check for player reaching top of canvas and winning the game
+    if (this.y < 0) {
+        this.x = 200;
+        this.y = 380;
 	score++;
 	document.getElementById('playerScore').innerHTML = score;
 	this.reset();
@@ -88,24 +105,22 @@ handleInput(keyPress) {
 };
 reset() {
     this.x = 200;
-    this.y = 320;
+    this.y = 380;
 };
 
 
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
-var enemy1 = new Enemy(-90, 60);
-var enemy2 = new Enemy(-190, 140);
-var enemy3 = new Enemy(-290, 230);
-var enemy4 = new Enemy(-390, 140);
-var enemy5 = new Enemy(-490, 60);
-var enemy6 = new Enemy(-890, 230);
+var allEnemies = [];
 
-// Place all enemy objects in an array called allEnemies
-var allEnemies = [enemy1, enemy2, enemy3, enemy4, enemy5, enemy6];
-// Place the player object in a variable called player
-var player = new Player();
+// Position "y" where the enemies will are created
+var enemyPosition = [60, 140, 220];
+var player = new Player(200, 380, 50);
+var enemy;
+
+enemyPosition.forEach(function(posY) {
+    enemy = new Enemy(0, posY, 100 + Math.floor(Math.random() * 512));
+    allEnemies.push(enemy);
+});
+
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
