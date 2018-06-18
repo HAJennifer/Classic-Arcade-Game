@@ -71,8 +71,7 @@ update(dt) {
     if (this.y < 0) {
         this.x = 200;
         this.y = 380;
-	score += 1; // Score goes up
-        $('#score').text(score);
+	document.getElementById("score").innerHTML +=1;
 	
 }
 };
