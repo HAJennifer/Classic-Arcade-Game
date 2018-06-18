@@ -9,5 +9,5 @@ I built this game as part of the Udacity front-end web developer nanodegree. The
 - Move right: right arrow ->
 - Reach the water
 - Avoid the bugs
-Enjoy ;)
+# Enjoy ;)
 https://hajennifer.github.io/Classic-Arcade-Game/
