@@ -29,14 +29,9 @@ class Enemy{
         player.x + 37 > this.x &&
         player.y < this.y + 25 &&
         30 + player.y > this.y) {
-	lives--;
         player.x = 200;
         player.y = 380;
-	document.getElementById('playerLives').innerHTML = lives;
     }
-	if (player.y < 0) { 
-        scoring();
-	}
     };
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
@@ -57,7 +52,6 @@ class Player{
     this.x = x;
     this.y = y;
     this.speed = speed;		
-	this.score = 0;
     this.sprite = 'images/char-boy.png';
 }
 
@@ -76,7 +70,6 @@ update(dt) {
     if (this.y < 0) {
         this.x = 200;
         this.y = 380;
-	document.getElementById("score").innerHTML +=1;
 	
 }
 };
@@ -102,16 +95,6 @@ handleInput(keyPress) {
 };
 };
 
-function scoring(){
-    score++;
-    document.getElementById('playerScore').innerHTML = score;
-}
-
-var score = 0;
-document.getElementById('playerScore').innerHTML = score;
-//initiate lives
-var lives = 3;
-document.getElementById('playerLives').innerHTML = lives;
 
 var player = new Player(200,380);
 
