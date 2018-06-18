@@ -80,8 +80,7 @@ render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-handleInput(keyPress) {
-
+Player.prototype.handleInput = function (keyPress) {
     switch (keyPress) {
         case 'left':
             this.x -= this.speed + 50;
