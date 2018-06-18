@@ -109,7 +109,7 @@ handleInput(keyPress) {
 
 ];
 
-var Player = new Player(200, 380);
+var player = new Player(200, 380);
 
 
 
