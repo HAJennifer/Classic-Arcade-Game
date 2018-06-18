@@ -55,7 +55,7 @@ class Player{
     this.speed = speed;
     this.sprite = 'images/char-boy.png';
 
-update(dt){
+update(dt) {
  if (this.y > 380) {
         this.y = 380;
     }
@@ -73,6 +73,7 @@ update(dt){
 	
 }
 };
+    };
 
 render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
